@@ -11,6 +11,7 @@
         android:theme="@style/Theme.Eatmore">
         <activity
             android:name=".MainActivity"
+            android:theme="@style/Theme.Eatmore.Launcher"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
