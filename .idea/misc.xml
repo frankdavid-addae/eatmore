@@ -3,9 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.33745123537061117" />
         <entry key="app/src/main/res/drawable/ic_eatmore_logo.xml" value="0.2713541666666667" />
         <entry key="app/src/main/res/drawable/launcher.xml" value="0.146875" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/drawable/text_selected.xml" value="0.17601351351351352" />
+        <entry key="app/src/main/res/drawable/text_unselected.xml" value="0.17601351351351352" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />
       </map>
     </option>
   </component>
