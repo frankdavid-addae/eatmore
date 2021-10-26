@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_eatmore_logo.xml" value="0.2713541666666667" />
         <entry key="app/src/main/res/drawable/launcher.xml" value="0.146875" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
       </map>
     </option>
   </component>
