@@ -20,11 +20,14 @@ public class FoodCategoryAdapter extends RecyclerView.Adapter<FoodCategoryAdapte
 
     List<FoodCategory> foodCategoryList;
     Context context;
-    int selectedItemPosition = 0;
+    int selectedCategoryPosition = 0;
+    OnCategoryClickedListener onCategoryClickedListener;
 
-    public FoodCategoryAdapter(List<FoodCategory> foodCategoryList, Context context) {
+    public FoodCategoryAdapter(List<FoodCategory> foodCategoryList, Context context,
+       OnCategoryClickedListener onCategoryClickedListener) {
         this.foodCategoryList = foodCategoryList;
         this.context = context;
+        this.onCategoryClickedListener = onCategoryClickedListener;
     }
 
     @NonNull
@@ -41,7 +44,7 @@ public class FoodCategoryAdapter extends RecyclerView.Adapter<FoodCategoryAdapte
         holder.tvFoodCategoryName.setText(foodCategoryList.get(position).getName());
         holder.ivFoodCategoryImage.setImageResource(foodCategoryList.get(position).getImage());
 
-        if (position == selectedItemPosition) {
+        if (position == selectedCategoryPosition) {
             holder.tvFoodCategoryName.setTextColor(context.getColor(R.color.red));
             holder.ivFoodCategoryImage.setColorFilter(ContextCompat.getColor(context, R.color.red), PorterDuff.Mode.SRC_ATOP);
             holder.mcvCategory.setOutlineAmbientShadowColor(context.getColor(R.color.red));
@@ -74,10 +77,17 @@ public class FoodCategoryAdapter extends RecyclerView.Adapter<FoodCategoryAdapte
             mcvCategory.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    selectedItemPosition = getAdapterPosition();
+                    selectedCategoryPosition = getAdapterPosition();
+                    if (onCategoryClickedListener != null) {
+                        onCategoryClickedListener.onCategoryClick(getAdapterPosition());
+                    }
                     notifyDataSetChanged();
                 }
             });
         }
+    }
+
+    public interface OnCategoryClickedListener {
+        void onCategoryClick(int position);
     }
 }
